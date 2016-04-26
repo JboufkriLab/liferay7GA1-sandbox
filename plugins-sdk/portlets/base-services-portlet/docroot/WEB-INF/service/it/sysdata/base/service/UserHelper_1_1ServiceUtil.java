@@ -1,0 +1,124 @@
+/**
+ * Copyright (c) 2000-present Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package it.sysdata.base.service;
+
+import aQute.bnd.annotation.ProviderType;
+
+import com.liferay.portal.kernel.bean.PortletBeanLocatorUtil;
+import com.liferay.portal.kernel.service.InvokableService;
+import com.liferay.portal.kernel.util.ReferenceRegistry;
+
+/**
+ * Provides the remote service utility for UserHelper_1_1. This utility wraps
+ * {@link it.sysdata.base.service.impl.UserHelper_1_1ServiceImpl} and is the
+ * primary access point for service operations in application layer code running
+ * on a remote server. Methods of this service are expected to have security
+ * checks based on the propagated JAAS credentials because this service can be
+ * accessed remotely.
+ *
+ * @author @baxtheman
+ * @see UserHelper_1_1Service
+ * @see it.sysdata.base.service.base.UserHelper_1_1ServiceBaseImpl
+ * @see it.sysdata.base.service.impl.UserHelper_1_1ServiceImpl
+ * @generated
+ */
+@ProviderType
+public class UserHelper_1_1ServiceUtil {
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never modify this class directly. Add custom service methods to {@link it.sysdata.base.service.impl.UserHelper_1_1ServiceImpl} and rerun ServiceBuilder to regenerate this class.
+	 */
+	public static com.liferay.portal.kernel.model.User addUserEmail(
+		java.lang.String emailAddress, java.lang.String password,
+		java.lang.String firstName, java.lang.String lastName,
+		java.lang.String secretKey)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addUserEmail(emailAddress, password, firstName, lastName,
+			secretKey);
+	}
+
+	public static com.liferay.portal.kernel.model.User addUserEmail(
+		java.lang.String emailAddress, java.lang.String password,
+		java.lang.String secretKey)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addUserEmail(emailAddress, password, secretKey);
+	}
+
+	/**
+	* Returns the OSGi service identifier.
+	*
+	* @return the OSGi service identifier
+	*/
+	public static java.lang.String getOSGiServiceIdentifier() {
+		return getService().getOSGiServiceIdentifier();
+	}
+
+	public static java.lang.String getUserProfilePage()
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().getUserProfilePage();
+	}
+
+	public static java.lang.Object invokeMethod(java.lang.String name,
+		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
+		throws java.lang.Throwable {
+		return getService().invokeMethod(name, parameterTypes, arguments);
+	}
+
+	public static com.liferay.portal.kernel.model.User sendNewPassword(
+		java.lang.String emailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().sendNewPassword(emailAddress);
+	}
+
+	public static com.liferay.portal.kernel.model.User updateUserInfo(
+		java.lang.String emailAddress, java.lang.String password,
+		java.lang.String firstName, java.lang.String lastName)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateUserInfo(emailAddress, password, firstName, lastName);
+	}
+
+	public static void clearService() {
+		_service = null;
+	}
+
+	public static UserHelper_1_1Service getService() {
+		if (_service == null) {
+			InvokableService invokableService = (InvokableService)PortletBeanLocatorUtil.locate(ClpSerializer.getServletContextName(),
+					UserHelper_1_1Service.class.getName());
+
+			if (invokableService instanceof UserHelper_1_1Service) {
+				_service = (UserHelper_1_1Service)invokableService;
+			}
+			else {
+				_service = new UserHelper_1_1ServiceClp(invokableService);
+			}
+
+			ReferenceRegistry.registerReference(UserHelper_1_1ServiceUtil.class,
+				"_service");
+		}
+
+		return _service;
+	}
+
+	private static UserHelper_1_1Service _service;
+}
