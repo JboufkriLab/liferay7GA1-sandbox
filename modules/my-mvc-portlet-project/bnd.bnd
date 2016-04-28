@@ -1,4 +1,2 @@
 Bundle-SymbolicName: my.mvc.portlet.project
 Bundle-Version: 1.0.0
-Import-Package:\
-	!com.liferay.my.account.web.*
