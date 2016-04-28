@@ -4,6 +4,6 @@ dependencies {
 	compile group: "javax.servlet", name: "servlet-api", version: "2.5"
 	compile group: "org.osgi", name: "org.osgi.compendium", version: "5.0.0"
 
-	compile group: "com.liferay", name: "com.liferay.my.account.web", version: "1.0.2"
+	compile group: "com.liferay", name: "com.liferay.my.account.web", version: "1.0.1"
 	compile group: "com.liferay", name: "com.liferay.users.admin.web", version: "1.0.4"
 }
